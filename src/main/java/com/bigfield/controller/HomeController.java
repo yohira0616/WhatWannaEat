@@ -1,20 +1,23 @@
 package com.bigfield.controller;
 
+import com.bigfield.config.GrunaviApi;
 import com.bigfield.model.service.LunchDecideService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
 
     private LunchDecideService lunchDecider;
 
+    private GrunaviApi grunaviApi;
+
     @Autowired
-    public HomeController(LunchDecideService lunchDecider) {
+    public HomeController(LunchDecideService lunchDecider, GrunaviApi grunaviApi) {
         this.lunchDecider = lunchDecider;
+        this.grunaviApi = grunaviApi;
     }
 
     @RequestMapping("/")
@@ -27,6 +30,7 @@ public class HomeController {
         String result = lunchDecider.decideLunch();
         model.addAttribute("result", result);
         model.addAttribute("pageTitle", "今日は" + result + "を食べましょう。");
+        model.addAttribute("grunavikey", grunaviApi);
         return "result";
     }
 
