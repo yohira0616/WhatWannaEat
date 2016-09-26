@@ -1,0 +1,22 @@
+{
+  "name": "what-wanna-eat",
+  "version": "0.0.1",
+  "description": "decide what to eat",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yohira0616/WhatWannaEat.git"
+  },
+  "author": "yohira0616",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yohira0616/WhatWannaEat/issues"
+  },
+  "homepage": "https://github.com/yohira0616/WhatWannaEat#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
