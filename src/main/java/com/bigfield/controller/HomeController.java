@@ -30,7 +30,6 @@ public class HomeController {
         String result = lunchDecider.decideLunch();
         model.addAttribute("lunch", result);
         model.addAttribute("pageTitle", "今日は" + result + "を食べましょう。");
-        model.addAttribute("grunavikey", grunaviApi);
         return "result";
     }
 

@@ -16,7 +16,7 @@ public class WhatWannaEatApplicationTests {
 
     @Test
     public void contextLoads() {
-        service.search("中華", 35.746477399999996, 139.7392217);
+        service.search("和食", 35.746477399999996, 139.7392217);
     }
 
 }

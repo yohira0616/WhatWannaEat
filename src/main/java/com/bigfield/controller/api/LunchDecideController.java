@@ -2,6 +2,7 @@ package com.bigfield.controller.api;
 
 import com.bigfield.model.service.LunchDecideService;
 import com.bigfield.model.service.Restaurant;
+import com.bigfield.model.service.ganvi.GNaviSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,9 +17,12 @@ public class LunchDecideController {
 
     private LunchDecideService lunchDecideService;
 
+    private GNaviSearchService gNaviSearchService;
+
     @Autowired
-    public LunchDecideController(LunchDecideService lunchDecideService) {
+    public LunchDecideController(LunchDecideService lunchDecideService, GNaviSearchService gNaviSearchService) {
         this.lunchDecideService = lunchDecideService;
+        this.gNaviSearchService = gNaviSearchService;
     }
 
     @RequestMapping("/lunch")
@@ -27,7 +31,7 @@ public class LunchDecideController {
     }
 
     @RequestMapping("/restaurant")
-    public List<Restaurant> canditateRestaurants(@RequestParam String freeword, @RequestParam long longitude, @RequestParam long latitude) {
-        return new ArrayList<>();
+    public List<Restaurant> canditateRestaurants(@RequestParam("freeword") String freeword, @RequestParam("longitude") double longitude, @RequestParam("latitude") double latitude) {
+        return gNaviSearchService.search(freeword, latitude, longitude);
     }
 }

@@ -68,7 +68,7 @@ public class GNaviSearchService {
 
             //print
             result.forEach((re) -> {
-                System.out.println(re.getName() + ":" + re.getAddress() + ":" + re.getAddress());
+                System.out.println(re.getName() + ":" + re.getUrlMobile() + ":" + re.getAddress());
             });
 
             return result;
