@@ -8,7 +8,7 @@ public class GrunaviConfig {
 
     @Bean
     public GrunaviApi grunaviApi() {
-        return new GrunaviApi(System.getenv("GRUNAVI_KEY"));
+        return new GrunaviApi("35214ad59b8f8771a0d090041b391b05");
     }
 
 }

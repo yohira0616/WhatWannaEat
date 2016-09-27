@@ -28,7 +28,7 @@ public class HomeController {
     @RequestMapping("/result")
     public String result(Model model) {
         String result = lunchDecider.decideLunch();
-        model.addAttribute("result", result);
+        model.addAttribute("lunch", result);
         model.addAttribute("pageTitle", "今日は" + result + "を食べましょう。");
         model.addAttribute("grunavikey", grunaviApi);
         return "result";
