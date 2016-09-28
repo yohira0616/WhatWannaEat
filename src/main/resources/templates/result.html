@@ -25,15 +25,22 @@
         }
     }(document, 'script', 'twitter-wjs');</script>
 
-    <p>現在位置 <span id="app-geo-location"></span></p>
-    <p>近くの料理店</p>
+    <div class="center-block">
+        <div>
+            <button class="btn btn-default" id="app-rest-search">付近のレストランを検索</button>
+            <p>※位置情報を使用します</p>
+        </div>
+    </div>
 
-    <table class="table table-bordered" id="app-suggest-rest">
+    <table class="table table-bordered">
+        <thead>
         <tr>
             <th>店名</th>
             <th>携帯サイトURL</th>
             <th>住所</th>
         </tr>
+        </thead>
+        <tbody id="app-suggest-rest"></tbody>
     </table>
 
     <a href="http://www.gnavi.co.jp/">
@@ -43,6 +50,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
