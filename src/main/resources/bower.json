@@ -1,0 +1,17 @@
+{
+  "name": "what-wanna-eat",
+  "description": "decide what to eat",
+  "main": "gulpfile.js",
+  "authors": [
+    "yohira0616"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/yohira0616/WhatWannaEat",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
