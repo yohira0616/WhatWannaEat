@@ -14,6 +14,10 @@ public class GrunaviConfig {
 
   @Bean
   public GrunaviApi grunaviApi() {
+    String herokuApiConfig = System.getenv("grunavi_api_key");
+    if (herokuApiConfig != null) {
+      return new GrunaviApi(herokuApiConfig);
+    }
     return new GrunaviApi(gNaviapiKey);
   }
 
