@@ -3,6 +3,7 @@ package com.bigfield.model.service.ganvi;
 
 import com.bigfield.config.GrunaviApi;
 import com.bigfield.model.service.Restaurant;
+import com.bigfield.model.service.spec.GNaviSearchServiceSpec;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
@@ -20,7 +21,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @Service
-public class GNaviSearchService {
+public class GNaviSearchService implements GNaviSearchServiceSpec {
 
   private GrunaviApi api;
 
@@ -29,6 +30,7 @@ public class GNaviSearchService {
     this.api = grunaviApi;
   }
 
+  @Override
   public List<Restaurant> search(String word, double latitude, double longitude) {
     String key = api.getKeyid();
     CloseableHttpClient httpClient = HttpClients.createDefault();
