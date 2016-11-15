@@ -1,14 +1,11 @@
 package com.bigfield.config;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@AllArgsConstructor
+@Data
 public class GrunaviApi {
 
-    private String keyid;
-
-    public GrunaviApi(String keyid) {
-        this.keyid = keyid;
-    }
-
-    public String getKeyid() {
-        return keyid;
-    }
+  private String keyid;
 }

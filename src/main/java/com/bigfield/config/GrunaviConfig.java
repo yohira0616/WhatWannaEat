@@ -1,14 +1,20 @@
 package com.bigfield.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource(value = "classpath:api.properties")
 public class GrunaviConfig {
 
-    @Bean
-    public GrunaviApi grunaviApi() {
-        return new GrunaviApi("35214ad59b8f8771a0d090041b391b05");
-    }
+  @Value("${grunavi.api.key}")
+  private String gNaviapiKey;
+
+  @Bean
+  public GrunaviApi grunaviApi() {
+    return new GrunaviApi(gNaviapiKey);
+  }
 
 }
